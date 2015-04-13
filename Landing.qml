@@ -45,16 +45,7 @@ Item
 
 			transitions: [
 				Transition {
-					from: "Normal"
-					to: "Hover"
-					ColorAnimation {
-						property: "color"
-						duration: 200
-					}
-				},
-				Transition {
-					from: "Hover"
-					to: "Normal"
+					to: "*"
 					ColorAnimation {
 						property: "color"
 						duration: 200
@@ -115,16 +106,7 @@ Item
 
 			transitions: [
 				Transition {
-					from: "Normal"
-					to: "Hover"
-					ColorAnimation {
-						property: "color"
-						duration: 200
-					}
-				},
-				Transition {
-					from: "Hover"
-					to: "Normal"
+					to: "*"
 					ColorAnimation {
 						property: "color"
 						duration: 200
