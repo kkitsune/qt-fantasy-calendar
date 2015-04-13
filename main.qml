@@ -4,8 +4,10 @@ import QtQuick.Window 2.2
 Window
 {
 	visible: true
+	title: "Fantasy Calendar"
 	width: 800
 	height: 600
+
 	Landing
 	{
 		anchors.fill: parent
