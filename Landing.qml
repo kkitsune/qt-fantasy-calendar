@@ -2,6 +2,9 @@ import QtQuick 2.4
 
 Item
 {
+	signal newClicked()
+	signal openClicked()
+
 	Item
 	{
 		width: 300
@@ -58,6 +61,7 @@ Item
 				id: newCalendarMouse
 				hoverEnabled: true
 				anchors.fill: parent
+				onClicked: newClicked()
 			}
 
 			Text
@@ -119,6 +123,7 @@ Item
 				id: openCalendarMouse
 				hoverEnabled: true
 				anchors.fill: parent
+				onClicked: openClicked()
 			}
 
 			Text

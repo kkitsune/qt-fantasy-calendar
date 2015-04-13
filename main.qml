@@ -9,5 +9,7 @@ Window
 	Landing
 	{
 		anchors.fill: parent
+		onNewClicked: console.log("New Clicked");
+		onOpenClicked: console.log("Open Clicked");
 	}
 }
