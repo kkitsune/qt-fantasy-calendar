@@ -1,5 +1,6 @@
 import QtQuick 2.4
 import QtQuick.Window 2.2
+import QtQuick.Controls 1.3
 
 Window
 {
@@ -8,10 +9,17 @@ Window
 	width: 800
 	height: 600
 
-	Landing
+	StackView
 	{
 		anchors.fill: parent
-		onNewClicked: console.log("New Clicked");
-		onOpenClicked: console.log("Open Clicked");
+		initialItem: landing
+
+		Landing
+		{
+			id: landing
+			anchors.fill: parent
+			onNewClicked: console.log("New Clicked");
+			onOpenClicked: console.log("Open Clicked");
+		}
 	}
 }
