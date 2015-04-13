@@ -11,19 +11,62 @@ Item
 
 		Rectangle
 		{
+			id: newCalendar
 			height: 100
 			color: "#1fc91f"
 			anchors.right: parent.right
 			anchors.left: parent.left
 			anchors.top: parent.top
 
+			state: "Normal"
+			states:
+			[
+				State
+				{
+					name: "Normal"
+					when: !newCalendarMouse.containsMouse
+					PropertyChanges
+					{
+						target: newCalendar
+						color: "#1fc91f"
+					}
+				},
+				State
+				{
+					name: "Hover"
+					when: newCalendarMouse.containsMouse
+					PropertyChanges
+					{
+						target: newCalendar
+						color: "#15f212"
+					}
+				}
+			]
+
+			transitions: [
+				Transition {
+					from: "Normal"
+					to: "Hover"
+					ColorAnimation {
+						property: "color"
+						duration: 200
+					}
+				},
+				Transition {
+					from: "Hover"
+					to: "Normal"
+					ColorAnimation {
+						property: "color"
+						duration: 200
+					}
+				}
+			]
+
 			MouseArea
 			{
-				id: newCalendar
+				id: newCalendarMouse
 				hoverEnabled: true
 				anchors.fill: parent
-				onEntered: parent.color = "#15f212"
-				onExited: parent.color = "#1fc91f"
 			}
 
 			Text
@@ -38,19 +81,62 @@ Item
 
 		Rectangle
 		{
+			id: openCalendar
 			height: 100
 			color: "#1fc91f"
 			anchors.bottom: parent.bottom
 			anchors.right: parent.right
 			anchors.left: parent.left
 
+			state: "Normal"
+			states:
+			[
+				State
+				{
+					name: "Normal"
+					when: !openCalendarMouse.containsMouse
+					PropertyChanges
+					{
+						target: openCalendar
+						color: "#1fc91f"
+					}
+				},
+				State
+				{
+					name: "Hover"
+					when: openCalendarMouse.containsMouse
+					PropertyChanges
+					{
+						target: openCalendar
+						color: "#15f212"
+					}
+				}
+			]
+
+			transitions: [
+				Transition {
+					from: "Normal"
+					to: "Hover"
+					ColorAnimation {
+						property: "color"
+						duration: 200
+					}
+				},
+				Transition {
+					from: "Hover"
+					to: "Normal"
+					ColorAnimation {
+						property: "color"
+						duration: 200
+					}
+				}
+			]
+
 			MouseArea
 			{
-				id: openCalendar
+				id: openCalendarMouse
 				hoverEnabled: true
 				anchors.fill: parent
-				onEntered: parent.color = "#15f212"
-				onExited: parent.color = "#1fc91f"
 			}
 
 			Text
