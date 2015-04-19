@@ -1,12 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-<<<<<<< HEAD
-        <file>MainForm.ui.qml</file>
-        <file>main.cpp</file>
-=======
         <file>Landing.qml</file>
->>>>>>> 6970675f1caf71135f763155e6507fe308498b4a
     </qresource>
 	<qresource prefix="/MoonPhase">
 		<file>MoonPhase/00.png</file>
