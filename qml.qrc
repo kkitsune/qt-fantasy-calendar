@@ -2,5 +2,35 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>MainForm.ui.qml</file>
+        <file>main.cpp</file>
     </qresource>
+	<qresource prefix="/MoonPhase">
+		<file>MoonPhase/00.png</file>
+		<file>MoonPhase/01.png</file>
+		<file>MoonPhase/03.png</file>
+		<file>MoonPhase/04.png</file>
+		<file>MoonPhase/05.png</file>
+		<file>MoonPhase/06.png</file>
+		<file>MoonPhase/07.png</file>
+		<file>MoonPhase/08.png</file>
+		<file>MoonPhase/09.png</file>
+		<file>MoonPhase/10.png</file>
+		<file>MoonPhase/11.png</file>
+		<file>MoonPhase/12.png</file>
+		<file>MoonPhase/13.png</file>
+		<file>MoonPhase/14.png</file>
+		<file>MoonPhase/15.png</file>
+		<file>MoonPhase/16.png</file>
+		<file>MoonPhase/17.png</file>
+		<file>MoonPhase/18.png</file>
+		<file>MoonPhase/19.png</file>
+		<file>MoonPhase/20.png</file>
+		<file>MoonPhase/21.png</file>
+		<file>MoonPhase/22.png</file>
+		<file>MoonPhase/23.png</file>
+		<file>MoonPhase/24.png</file>
+		<file>MoonPhase/25.png</file>
+		<file>MoonPhase/26.png</file>
+		<file>MoonPhase/27.png</file>
+	</qresource>
 </RCC>
