@@ -1,6 +1,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
+#include "calendar.h"
+
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);

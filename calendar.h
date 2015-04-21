@@ -6,11 +6,11 @@
 class Calendar : public QObject
 {
 	Q_OBJECT
-
-	static const QString Directory = QString("./Save/");
 public:
 	Calendar(const QString& name, QObject* parent = 0);
 	virtual ~Calendar();
+
+	static QStringList list();
 
 public slots:
 	virtual void close();
