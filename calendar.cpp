@@ -6,13 +6,14 @@
 
 #include "calendar.h"
 
-static QString Directory = "./save/";
+static QDir Directory("./save/");
 
 Calendar::Calendar(const QString& name, QObject* parent)
 	: QObject(parent)
 {
+	ensureSaveDirectory();
 	auto db = QSqlDatabase::addDatabase("QSQLITE");
-	db.setDatabaseName(QDir().absolutePath() + Directory + name + ".db");
+	db.setDatabaseName(Directory.absolutePath() + QDir::separator() + name + ".db");
 	db.open();
 
 	if(db.tables().empty())
@@ -37,16 +38,20 @@ Calendar::~Calendar()
 
 QStringList Calendar::list()
 {
-	QDir path(Directory);
-	if(!path.exists())
-		QDir().mkdir(Directory);
+	ensureSaveDirectory();
 
-	QStringList ret, entries = path.entryList();
+	QStringList ret, entries = Directory.entryList();
 	for(QString entry : entries)
 		if(entry.endsWith(".db"))
 			ret.append(entry.split('.').first());
 
 	return ret;
+}
+
+void Calendar::ensureSaveDirectory()
+{
+	if(!Directory.exists())
+		QDir().mkdir(Directory.absolutePath());
 }
 
 void Calendar::close()

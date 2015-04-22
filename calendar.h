@@ -11,6 +11,7 @@ public:
 	virtual ~Calendar();
 
 	static QStringList list();
+	static void ensureSaveDirectory();
 
 public slots:
 	virtual void close();
