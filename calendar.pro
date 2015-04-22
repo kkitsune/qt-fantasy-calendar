@@ -3,7 +3,8 @@ TEMPLATE = app
 QT += qml quick sql
 
 SOURCES += main.cpp \
-    calendar.cpp
+    calendar.cpp \
+    month.cpp
 
 RESOURCES += qml.qrc \
     images.qrc
@@ -15,4 +16,5 @@ QML_IMPORT_PATH =
 include(deployment.pri)
 
 HEADERS += \
-    calendar.h
+    calendar.h \
+    month.h
