@@ -15,7 +15,12 @@ Item
 		anchors.left: parent.left
 		anchors.top: parent.top
 		text: qsTr("<< Cancel")
-		onButtonClicked: cancelClicked()
+		onButtonClicked:
+		{
+			cancelClicked();
+			stack.clear();
+			stack.push(stack.initialItem);
+		}
 	}
 
 	Rectangle
