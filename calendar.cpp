@@ -13,7 +13,7 @@ Calendar::Calendar(const QString& name, QObject* parent)
 {
 	ensureSaveDirectory();
 	auto db = QSqlDatabase::addDatabase("QSQLITE");
-	db.setDatabaseName(Directory.absolutePath() + QDir::separator() + name + ".db");
+	db.setDatabaseName(Directory.absolutePath() + QDir::separator() + name + ".cal");
 	db.open();
 
 	if(db.tables().empty())
@@ -59,7 +59,7 @@ QStringList Calendar::list()
 
 	QStringList ret, entries = Directory.entryList();
 	for(QString entry : entries)
-		if(entry.endsWith(".db"))
+		if(entry.endsWith(".cal"))
 			ret.append(entry.split('.').first());
 
 	return ret;
