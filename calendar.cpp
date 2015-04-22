@@ -25,7 +25,7 @@ Calendar::Calendar(const QString& name, QObject* parent)
 			qFatal("SQL Error : %s", q.lastError().databaseText().toStdString().c_str());
 		if(!q.exec("CREATE TABLE 'Day' ('id' INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 'Name' TEXT NOT NULL UNIQUE)"))
 			qFatal("SQL Error : %s", q.lastError().databaseText().toStdString().c_str());
-		if(!q.exec("CREATE TABLE 'Event' ('id' INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 'Month' INTEGER NOT NULL, 'Day' INTEGER NOT NULL, 'Year' INTEGER NOT NULL CHECK(Year > 0), 'Name' TEXT NOT NULL UNIQUE, 'Description' TEXT, FOREIGN KEY('Month') REFERENCES 'Month', FOREIGN KEY('Day') REFERENCES 'Day')"))
+		if(!q.exec("CREATE TABLE 'Event' ('id' INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 'Month' INTEGER NOT NULL, 'Day' INTEGER NOT NULL, 'Year' INTEGER NOT NULL CHECK(Year > 0), 'Name' TEXT NOT NULL UNIQUE, 'Description' TEXT, FOREIGN KEY('Month') REFERENCES 'Month')"))
 			qFatal("SQL Error : %s", q.lastError().databaseText().toStdString().c_str());
 		db.commit();
 	}
