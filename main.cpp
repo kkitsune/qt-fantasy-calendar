@@ -8,10 +8,10 @@ int main(int argc, char* argv[])
 {
     QGuiApplication app(argc, argv);
 
-	Calendar cal("Test");
+	/*Calendar cal("Test");
 	qDebug() << cal.newMonth("Ordelius", 41)->name();
 	qDebug() << cal.newMonth("Caslistrius", 41)->name();
-	cal.close();
+	cal.close();*/
 
     QQmlApplicationEngine engine;
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));

@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>Landing.qml</file>
         <file>NewCalendar.qml</file>
+        <file>SquareButton.qml</file>
     </qresource>
 </RCC>

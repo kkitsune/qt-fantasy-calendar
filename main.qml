@@ -24,6 +24,8 @@ Window
 		NewCalendar
 		{
 			id: newCal
+			visible: false
+			onCancelClicked: { console.log("Cancel Clicked"); parent.pop(); }
 		}
 	}
 }
