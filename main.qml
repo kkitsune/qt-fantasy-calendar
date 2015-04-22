@@ -17,9 +17,13 @@ Window
 		Landing
 		{
 			id: landing
-			anchors.fill: parent
-			onNewClicked: console.log("New Clicked");
+			onNewClicked: { console.log("New Clicked"); parent.push(newCal); }
 			onOpenClicked: console.log("Open Clicked");
+		}
+
+		NewCalendar
+		{
+			id: newCal
 		}
 	}
 }
