@@ -36,6 +36,23 @@ Calendar::~Calendar()
 	close();
 }
 
+Month* Calendar::newMonth(const QString& name, uint length)
+{
+	QSqlQuery q;
+	q.prepare("INSERT INTO 'Month' (Name, Length) values (?, ?)");
+	q.addBindValue(name);
+	q.addBindValue(length);
+	if(!q.exec())
+	{
+		qDebug() << q.lastError().text();
+		return nullptr;
+	}
+
+	q.exec("SELECT MAX(id) as id FROM 'Month' LIMIT 1");
+	q.next();
+	return new Month(q.value(0).toUInt(), this);
+}
+
 QStringList Calendar::list()
 {
 	ensureSaveDirectory();

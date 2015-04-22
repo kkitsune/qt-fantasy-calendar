@@ -1,7 +1,7 @@
 #ifndef CALENDAR_H
 #define CALENDAR_H
 
-#include <QObject>
+#include "month.h"
 
 class Calendar : public QObject
 {
@@ -9,6 +9,8 @@ class Calendar : public QObject
 public:
 	Calendar(const QString& name, QObject* parent = 0);
 	virtual ~Calendar();
+
+	virtual Month* newMonth(const QString& name, uint length);
 
 	static QStringList list();
 	static void ensureSaveDirectory();

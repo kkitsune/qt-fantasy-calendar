@@ -22,6 +22,7 @@ QString Month::name()
 	QSqlQuery q;
 	q.prepare("SELECT Name from 'Month' where id = ?");
 	q.addBindValue(_id);
+	q.exec();
 	if(q.next())
 		return q.value(0).toString();
 	else
@@ -43,6 +44,7 @@ uint Month::length()
 	QSqlQuery q;
 	q.prepare("SELECT Length from 'Month' where id = ?");
 	q.addBindValue(_id);
+	q.exec();
 	if(q.next())
 		return q.value(0).toUInt();
 	else
