@@ -49,6 +49,14 @@ Item
 		Item
 		{
 			id: nameCal
+			onVisibleChanged:
+			{
+				if(visible)
+				{
+					name.selectAll();
+					name.forceActiveFocus();
+				}
+			}
 
 			Rectangle
 			{
