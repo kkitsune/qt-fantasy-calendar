@@ -6,8 +6,10 @@
 class Day : public QObject
 {
 	Q_OBJECT
+	Q_PROPERTY(uint id READ id)
+	Q_PROPERTY(QString name READ name WRITE setName)
 public:
-	Day(uint id, QObject *parent = 0);
+	Day(uint id, QObject* parent = 0);
 	virtual ~Day();
 
 	virtual inline uint id() { return _id; }
