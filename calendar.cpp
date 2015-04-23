@@ -53,6 +53,22 @@ Month* Calendar::newMonth(const QString& name, uint length)
 	return new Month(q.value(0).toUInt(), this);
 }
 
+Day* Calendar::newDay(const QString& name)
+{
+	QSqlQuery q;
+	q.prepare("INSERT INTO 'Day' (Name) values (?)");
+	q.addBindValue(name);
+	if(!q.exec())
+	{
+		qDebug() << q.lastError().text();
+		return nullptr;
+	}
+
+	q.exec("SELECT MAX(id) as id FROM 'Day' LIMIT 1");
+	q.next();
+	return new Day(q.value(0).toUInt(), this);
+}
+
 QStringList Calendar::list()
 {
 	ensureSaveDirectory();

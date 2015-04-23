@@ -2,6 +2,7 @@
 #define CALENDAR_H
 
 #include "month.h"
+#include "day.h"
 
 class Calendar : public QObject
 {
@@ -10,7 +11,8 @@ public:
 	Calendar(const QString& name, QObject* parent = 0);
 	virtual ~Calendar();
 
-	virtual Month* newMonth(const QString& name, uint length);
+	Q_INVOKABLE virtual Month* newMonth(const QString& name, uint length);
+	Q_INVOKABLE virtual Day* newDay(const QString& name);
 
 	static QStringList list();
 	static void ensureSaveDirectory();

@@ -4,7 +4,8 @@ QT += qml quick sql
 
 SOURCES += main.cpp \
     calendar.cpp \
-    month.cpp
+    month.cpp \
+    day.cpp
 
 RESOURCES += qml.qrc \
     images.qrc
@@ -17,4 +18,5 @@ include(deployment.pri)
 
 HEADERS += \
     calendar.h \
-    month.h
+    month.h \
+    day.h
