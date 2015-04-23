@@ -33,5 +33,5 @@ void Day::setName(const QString& value)
 	q.addBindValue(value);
 	q.addBindValue(_id);
 	if(!q.exec())
-		qFatal("Month #%i Update failed", _id);
+		qFatal("Day #%i Update failed", _id);
 }
