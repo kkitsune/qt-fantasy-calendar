@@ -2,6 +2,7 @@
 #define MOON_H
 
 #include <QObject>
+#include <QColor>
 
 class Moon : public QObject
 {

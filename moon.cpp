@@ -1,7 +1,6 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QDebug>
-#include <QColor>
 
 #include "moon.h"
 

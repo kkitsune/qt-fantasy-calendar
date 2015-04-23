@@ -2,7 +2,6 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QDebug>
-#include <QColor>
 #include <QDir>
 
 #include "calendar.h"
