@@ -2,6 +2,7 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QDebug>
+#include <QColor>
 #include <QDir>
 
 #include "calendar.h"
@@ -51,6 +52,24 @@ Month* Calendar::newMonth(const QString& name, uint length)
 	q.exec("SELECT MAX(id) as id FROM 'Month' LIMIT 1");
 	q.next();
 	return new Month(q.value(0).toUInt(), this);
+}
+
+Moon* Calendar::newMoon(const QString& name, uint revolution, const QColor& color)
+{
+	QSqlQuery q;
+	q.prepare("INSERT INTO 'Moon' (Name, Revolution, Color) values (?, ?, ?)");
+	q.addBindValue(name);
+	q.addBindValue(revolution);
+	q.addBindValue(color.rgb());
+	if(!q.exec())
+	{
+		qDebug() << q.lastError().text();
+		return nullptr;
+	}
+
+	q.exec("SELECT MAX(id) as id FROM 'Moon' LIMIT 1");
+	q.next();
+	return new Moon(q.value(0).toUInt(), this);
 }
 
 Day* Calendar::newDay(const QString& name)
